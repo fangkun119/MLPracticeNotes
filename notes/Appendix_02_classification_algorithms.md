@@ -43,7 +43,8 @@ K分类、第K类参数为为列向量θ<sub>k</sub>，所有类别的参数列�
 备注:  k=2时，令θ=θ<sub>1</sub>-θ<sub>2</sub>，Softmax回归退化为Logistic Regression</br>
 > P<sub>1</sub> = e<sup>θ<sub>1</sub><sup>T</sup>·X</sup> / (e<sup>θ<sub>1</sub><sup>T</sup>·X</sup> + e<sup>θ<sub>2</sub><sup>T</sup>·X</sup>) = 1 / (1 + e<sup>-(θ<sub>1</sub>-θ<sub>2</sub>)<sup>T</sup>·X</sup>) = 1/(1+e<sup>-θ<sup>T</sup>·X</sup>)
 
-#3.Logistic Regression/Softmax与相对熵
+
+##3.Logistic Regression/Softmax与相对熵
 (1) 相对熵（也叫交叉熵、鉴别信息、Kullback熵，Kullback-Leible散度，K-L距离）</br>
 > 若p(x)是我们在研究的概率分布（例如样本概率），q(x)为一个基准分布（例如似然概率）</br>
 > 则p(x)与q(X)的相对熵D(p||q)，可以理解为对log(P(x)/Q(x))求数学期望，即

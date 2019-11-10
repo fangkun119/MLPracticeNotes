@@ -13,7 +13,7 @@
 (3) 带入所有样本，就可以得到似然函数L(θ)：
 
 * 似然函数（Likelyhood Function）：样本和标签已知的条件下，模型参数θ取特定值的概率
-* 公式：L(θ)= ∏(H(θ,X<sub>i</sub>)<sup>Y<sub>i</sub></sup>)*(1 - H(θ,X<sub>i</sub>))<sup>(1-Y<sub>i</sub>)</sup>) <br/>
+* 公式：`L(θ)= ∏(H(θ,X<sub>i</sub>)<sup>Y<sub>i</sub></sup>)*(1 - H(θ,X<sub>i</sub>))<sup>(1-Y<sub>i</sub>)</sup>)` <br/>
 
 (4) 取对数得到对数似然函数<br/> log(L(θ))=∑(Y<sub>i</sub>\*log(H(θ,X<sub>i</sub>))+(1-Y<sub>i</sub>)\*log(1 - H(θ,X<sub>i</sub>)))<br/>
 (5) 似然函数取最大值时，模型的精确度最高，进而可以用求偏导、梯度上升的方法求解 <br/>

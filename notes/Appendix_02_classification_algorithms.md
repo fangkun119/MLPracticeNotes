@@ -1,27 +1,24 @@
 # 分类模型算法推导的简要概述
 
 ## 1.Logistic回归
-(1) 假设函数(hypothesis function)：<br/>
+(1) <b>假设函数(hypothesis function)</b>：<br/>
 把θ<sup>T</sup>.X作为sigmoid函数的参数，从而将值域从`(-∞,∞)`$映射到`(0,1)`，其中0映射到0.5 <br/>
-
-(2) 映射后H(θ, X) = sigmoid(θ<sup>T</sup>·X) 是样本为正例的预测概率, 根据样本标签Y<sub>i</sub>取值有1，0两种<br/>
-
-* Y<sub>i</sub>=0 时使用 1 - H(θ, X) = 1 - sigmoid(θ<sup>T</sup>·X) 表示样本为负例的预测概率<br/>
-* Y<sub>i</sub>=1 时使用 sigmoid(θ<sup>T</sup>·X) 表示样本为正例的预测概率 
+(2) <b>似然函数(likelyhood function)</b>: <br/>
+映射后H(θ, X) = sigmoid(θ<sup>T</sup>·X) 是样本为正例的预测概率, 根据样本标签Y<sub>i</sub>取值有1，0两种<br/>
+> Y<sub>i</sub>=0 时使用 1 - H(θ, X) = 1 - sigmoid(θ<sup>T</sup>·X) 表示样本为负例的预测概率<br/>
+> Y<sub>i</sub>=1 时使用 sigmoid(θ<sup>T</sup>·X) 表示样本为正例的预测概率
 
 合并两个公式得到 P(Y<sub>i</sub>|X<sub>i</sub>, θ) = (H(θ,X<sub>i</sub>)^Y<sub>i</sub>) * (1 - H(θ,X<sub>i</sub>)^(1-Y<sub>i</sub>))，值取最大时预测最准确<br/>
-(3) 带入所有样本，就可以得到似然函数L(θ)：
+带入所有样本，就可以得到似然函数L(θ)（样本和标签已知的条件下，表示模型参数θ取特定值的概率的函数）
+> 公式：L(θ)= ∏(H(θ,X<sub>i</sub>)<sup>Y<sub>i</sub></sup>)*(1 - H(θ,X<sub>i</sub>))<sup>(1-Y<sub>i</sub>)</sup>)
 
-* 似然函数（Likelyhood Function）：样本和标签已知的条件下，模型参数θ取特定值的概率
-* 公式：`L(θ)= ∏(H(θ,X<sub>i</sub>)<sup>Y<sub>i</sub></sup>)*(1 - H(θ,X<sub>i</sub>))<sup>(1-Y<sub>i</sub>)</sup>)` <br/>
+(4) 取对数得到对数似然函数<br/> 
+> log(L(θ))=∑(Y<sub>i</sub>\*log(H(θ,X<sub>i</sub>))+(1-Y<sub>i</sub>)\*log(1 - H(θ,X<sub>i</sub>)))
 
-(4) 取对数得到对数似然函数<br/> log(L(θ))=∑(Y<sub>i</sub>\*log(H(θ,X<sub>i</sub>))+(1-Y<sub>i</sub>)\*log(1 - H(θ,X<sub>i</sub>)))<br/>
 (5) 似然函数取最大值时，模型的精确度最高，进而可以用求偏导、梯度上升的方法求解 <br/>
-
 备注1：H(θ,X)表示样本为正的预测概率, 是来自作者的设计思路。
 > 他想设计一个函数使得log (P<sub>positive</sub>/(1-P<sub>positive</sub>))是线性函数，进而能够用θ<sup>T</sup>·X表示，最终他使用了sigmoid函数。<br/>
-> 推导过程: <br/>
-log (P/(1-P)) = log (H(θ,X)/(1 - H(θ,X)) = log (1 / e<sup>(-θ<sup>T</sup>·X)</sup>)</sup> = θ<sup>T</sup>·X <br/>
+> 推导过程: log (P/(1-P)) = log (H(θ,X)/(1 - H(θ,X)) = log (1 / e<sup>(-θ<sup>T</sup>·X)</sup>)</sup> = θ<sup>T</sup>·X
 
 备注2：Logistic Regression 的损失函数，就是负的对数似然函数
 > 对数似然函数（梯度上升）取到最大值 <=> 损失函数 (梯度下降）取到最小值

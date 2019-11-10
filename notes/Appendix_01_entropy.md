@@ -29,6 +29,6 @@ Logist Regression使用`-D(p||q)`来建模作为影响损失函数的因子，�
 用来表示没有`X`时`Y`的不确定性、与给定`X`时`Y`不确定性的差值
 
 ## 6. Vem图
-![Vem](../pic/appidix_01_vem.jpg)
+![../pic/appidix_01_vem.jpg](../pic/appidix_01_vem.jpg)
 
 

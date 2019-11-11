@@ -1,4 +1,4 @@
-# 分类模型算法推导的简要概述
+# 分类模型算法推导的简要介绍
 
 ## 1.Logistic回归
 (1) <b>假设函数(hypothesis function)</b>：<br/>

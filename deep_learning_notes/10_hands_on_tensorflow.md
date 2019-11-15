@@ -72,7 +72,7 @@ with tf.Session() as sess:
 **(5) InteractiveSession会在创建时自动被设置为默认Session，不需要with块**
 P209
 
-### 6.图管理
+## 6.图管理
 **(1) 默认情况下节点自动添加到default graph上**
 
 ~~~python
@@ -88,7 +88,7 @@ with graph.as_default():
        x2 = tf.Variable(2)
 ~~~
 
-### 7.节点、变量
+## 7.节点、变量
 **(1) 生命周期**
 节点的生命周期是数据流图的每次执行；变量的生命周期伴随整个session从打开到关闭
 
@@ -119,7 +119,7 @@ with tf.Session() as sess:
 * 同名变量在不同Session中拥有各自的副本、相互独立
 * 分布式TensorFlow中即使变量共享同一个计算图，多个会话之间相互隔离，不共享任何状态
 
-### 8.例子：用公式求解法在Tensorflow中做线性回归：
+## 8.例子：用公式求解法在Tensorflow中做线性回归：
 完整内容：P211
 因为使用的是tensorFlow的API，诸如：
 
@@ -130,7 +130,7 @@ tf.magrix_inverse(Z)
 ~~~
 如果有GPU，这些运算会放在GPU上进行
 
-### 9.例子：手动计算线性回归中的梯度下降
+## 9.例子：手动计算线性回归中的梯度下降
 **(1) 注意事项**：需要先做向量归一化否则会很慢<br/>
 **(2) API**:
 
@@ -169,7 +169,7 @@ with tf.Session() as sess:
 ~~~
 X, Y定义成常量；theta定义成Variable；其他是普通节点包括y<sub>pred</sub>, error, mse以及 gradiet；training\_op是一个tf.assign节点，用于计算和更新Vairable θ的值
 
-### 10. 自动微分，以上面的线性回归为例
+## 10. 自动微分，以上面的线性回归为例
 
 **(1) 知识**</br> 用偏导公式计算梯度向量：<br/>
 
@@ -211,7 +211,7 @@ print("Best theta:")
 print(best_theta)
 ~~~
 
-### 11.使用梯度下降优化器
+## 11.使用梯度下降优化器
 方法：<br/>
 直接调用自动微分：<br/>
 
@@ -255,7 +255,7 @@ print("Best theta:")
 print(best_theta)
 ~~~
 
-### 12.动量优化器
+## 12.动量优化器
 特点：比梯度下降收敛更快 <br/>
 方法：<br/>
 使用梯度下降优化器<br/>
@@ -297,7 +297,7 @@ print("Best theta:")
 print(best_theta)
 ~~~
 
-### 13.用PlaceHolder为训练算法提供数据<br/>
+## 13.用PlaceHolder为训练算法提供数据<br/>
 
 ~~~python
 reset_graph()
@@ -310,7 +310,7 @@ print(B_val_1)
 print(B_val_2)
 ~~~
 
-### 14.实现Mini-Batch梯度下降
+## 14.实现Mini-Batch梯度下降
 方法：借助placeHolder，见下面代码加粗部分<br/>
 
 ~~~python 
@@ -351,7 +351,7 @@ with tf.Session() as sess:
     print(best_theta)
 ~~~
 
-### 15. 保存和加载模型，可以保存训练过程中的快照，也可以保存训练后的最终结果
+## 15. 保存和加载模型，可以保存训练过程中的快照，也可以保存训练后的最终结果
 
 ~~~python
 reset_graph()
@@ -397,7 +397,7 @@ with tf.Session() as sess:
     best_theta_restored = theta.eval() # not shown in the book
 ~~~
 
-### 18. 在JupyterNotebook中用TensorBoard可视化当前的数据流图
+## 18. 在JupyterNotebook中用TensorBoard可视化当前的数据流图
 
 ~~~python
 # To visualize the graph within Jupyter, we will use a TensorBoard server available online at https://tensorboard.appspot.com/ (so this will not work if you do not have Internet access). As far as I can tell, this code was originally written by Alex Mordvintsev in his DeepDream tutorial. Alternatively, you could use a tool like tfgraphviz.
@@ -405,7 +405,7 @@ from tensorflow_graph_in_jupyter import show_graph
 show_graph(tf.get_default_graph())
 ~~~
 
-### 17.用TensorBoard来可视化数据流图和学习曲线
+## 17.用TensorBoard来可视化数据流图和学习曲线
 
 **方法**：<br/> 
 创建FileWriter，将需要可视化的数据写到File Writer中，然后运行tensor board程序来可视化： 
@@ -459,7 +459,7 @@ file_writer.close()
 print (best_theta)
 ~~~
 
-### 19.命名作用域，也会直接影响到变量命名
+## 19.命名作用域，也会直接影响到变量命名
 
 ~~~python
 reset_graph()
@@ -477,7 +477,7 @@ for node in (a1, a2, a3, a4):
     print(node.op.name)
 ~~~
 
-### 20.带有命名作用域的模块化
+## 20.带有命名作用域的模块化
 
 ~~~python
 reset_graph()
@@ -499,7 +499,7 @@ file_writer = tf.summary.FileWriter("logs/relu2", tf.get_default_graph())
 file_writer.close()
 ~~~
 
-### 21. 在图的不同组件中共享变量
+## 21. 在图的不同组件中共享变量
 经典方法1: 函数传参
 
 ~~~python

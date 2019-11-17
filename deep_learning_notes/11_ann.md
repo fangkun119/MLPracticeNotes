@@ -1,6 +1,5 @@
 # 人工神经网络（ANN：Artificial Neural Network）
 
-
 ## 1.感知器（Perceptron）
 
 **(1) 线性阈值单元（LTU）**<br/>

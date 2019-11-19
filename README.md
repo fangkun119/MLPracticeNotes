@@ -1,6 +1,6 @@
 ## 目录
 
-### 模型训练<br/>
+### 1. 统计学习模型训练<br/>
 
 [01 机器学习介绍](machine_learning_notes/01_introduction.md)<br/>
 [02 机器学习项目](machine_learning_notes/02_machine_learning_project.md)<br/>
@@ -11,7 +11,7 @@
 [07 集成学习：Bagging以及随机森林](machine_learning_notes/07_ensembled_learning_bagging_random_forest.md)<br/>
 [08 集成学习：Boosting](machine_learning_notes/08_ensembled_learning_boosting.md)<br/>
 
-### 模型原理<br/>
+### 2. 统计学习原理概要<br/>
 
 [附录1: 熵](theory_note/Appendix_01_entropy.md)</br>
 [附录2: 分类模型](theory_note/Appendix_02_classification_algorithms.md)</br>
@@ -20,7 +20,7 @@
 [附录5: XGBoost](theory_note/Appendix_05_xgboost.md)</br>
 [附录6: AdaBoost](theory_note/Appendix_06_adaboost.md)</br>
 
-### 深度学习
+### 3. 深度学习模型训练<br/>
 [1.Tensor Flow](deep_learning_notes/10_hands_on_tensorflow.md)<br/>
 [2.ANN](deep_learning_notes/11_ann.md)<br/>
 [3.DNN模型训练技巧](deep_learning_notes/12_dnn_train_skills.md)<br/>

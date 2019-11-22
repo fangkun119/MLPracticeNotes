@@ -19,6 +19,8 @@
 [附录4: SVM](theory_note/Appendix_04_svm.md)</br>
 [附录5: XGBoost](theory_note/Appendix_05_xgboost.md)</br>
 [附录6: AdaBoost](theory_note/Appendix_06_adaboost.md)</br>
+附录7：聚类
+附录8：时间序列
 
 ### 4. Data Science项目<br/>
 

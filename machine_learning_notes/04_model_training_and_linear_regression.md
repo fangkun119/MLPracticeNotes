@@ -36,6 +36,10 @@ prediction = L(θ<sup>T</sup>·X) + error<br/>
 * **ESS判定系数（又叫回归平方和）**：ESS = SUM((Y<sub>i,predict</sub>-Y<sub>avg</sub>)<sup>2</sup>) 
 	> TSS(样本伪方差) >= ESS(预测值) + RSS(残差平方和) <br/>
 	> 仅当无偏估计时才成立
+	
+* **MAE**: 平均绝对误差（MeanAbsoluteError，MAE）
+* **RMSE**: 均方根误差
+* **平均绝对百分误差**（MeanAbsolutePercentageError，MAPE）
 
 ## 2.梯度下降
 超参数（学习率）：太低收敛慢、太高可能会导致损失值发散越来越大</br>

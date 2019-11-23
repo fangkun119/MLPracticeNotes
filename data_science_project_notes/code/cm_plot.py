@@ -1,4 +1,3 @@
-#-*- coding: utf-8 -*-
 def cm_plot(y, yp):
   
   from sklearn.metrics import confusion_matrix #µ¼Èë»ìÏı¾ØÕóº¯Êı

@@ -30,5 +30,5 @@ Logist Regression使用`-D(p||q)`来建模作为影响损失函数的因子，�
 
 ## 6. Vem图
 ![../pic/appendix_01_vem.jpg](../pic/appendix_01_vem.jpg)<br/>
-../pic/appendix_01_vem.jpg<br/>
+[../pic/appendix_01_vem.jpg](../pic/appendix_01_vem.jpg)<br/>
 

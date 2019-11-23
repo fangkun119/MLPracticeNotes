@@ -10,6 +10,7 @@
 [06 决策树](machine_learning_notes/06_decision_tree.md)<br/>
 [07 集成学习：Bagging以及随机森林](machine_learning_notes/07_ensembled_learning_bagging_random_forest.md)<br/>
 [08 集成学习：Boosting](machine_learning_notes/08_ensembled_learning_boosting.md)<br/>
+[09 时间序列](https://www.kaggle.com/fangkun119/learn-time-series-analysis-in-python)<br/>
 
 ### 2. 机器学习原理概要<br/>
 
@@ -19,8 +20,7 @@
 [附录4: SVM](theory_note/Appendix_04_svm.md)</br>
 [附录5: XGBoost](theory_note/Appendix_05_xgboost.md)</br>
 [附录6: AdaBoost](theory_note/Appendix_06_adaboost.md)</br>
-附录7：聚类
-附录8：时间序列
+[附录7: 聚类](theory_note/Appendix_07_clustering.md)<br/>
 
 ### 4. Data Science项目<br/>
 

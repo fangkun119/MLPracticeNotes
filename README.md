@@ -12,21 +12,23 @@
 [08 集成学习：Boosting](machine_learning_notes/08_ensembled_learning_boosting.md)<br/>
 [09 时间序列](https://www.kaggle.com/fangkun119/learn-time-series-analysis-in-python)<br/>
 
-### 2. 机器学习原理概要<br/>
+### 2. 机器学习原理<br/>
 
-[附录1: 熵](theory_note/Appendix_01_entropy.md)</br>
-[附录2: 分类模型](theory_note/Appendix_02_classification_algorithms.md)</br>
-[附录3: 线性回归](theory_note/Appendix_03_linear_regression.md)</br>
-[附录4: SVM](theory_note/Appendix_04_svm.md)</br>
-[附录5: XGBoost](theory_note/Appendix_05_xgboost.md)</br>
-[附录6: AdaBoost](theory_note/Appendix_06_adaboost.md)</br>
-[附录7: 聚类](theory_note/Appendix_07_clustering.md)<br/>
+线性代数：[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Algebra.pdf)<br/>
+数学分析及概率论：[\[摘要(熵)\]](theory_note/Appendix_01_entropy.md) [\[PDF 1 (数学分析及概率论1)\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Mathematics_Analysis_and_Probability_Theory_1.pdf) [\[PDF 2 (概率论2)\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Probability_Theory_2.pdf) <br/>
+线性回归、Logistic回归、SoftMax：[\[摘要: 分类模型\]](theory_note/Appendix_02_classification_algorithms.md) [\[摘要: 线性回归\]](theory_note/Appendix_03_linear_regression.md) [\[PDF 1\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Regression_Logistic_Regression_and_SoftMax_1.pdf) [\[PDF 2\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Regression_Logistic_Regression_and_SoftMax_2.pdf)<br/>
+决策树和随机森林：[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Tree_and_Forest.pdf)<br/>
+Boosting：AdaBoosting、GBDT：[\[网页：XGBoost\]](theory_note/Appendix_05_xgboost.md) [\[网页：AdaBoost\]](theory_note/Appendix_06_adaboost.md)  [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Boosting_AdaBoosting_GBDT.pdf)<br/>
+SVM：[\[网页\]](theory_note/Appendix_04_svm.md) [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/SVM.pdf)<br/>
+聚类：[\[网页\]](theory_note/Appendix_07_clustering.md) [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Clustering_Algorithms.pdf)<br/>
+EM：[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/EM.pdf)<br/>
+主题模型：[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Topic_Model.pdf)<br/>
+
 
 ### 4. Data Science项目<br/>
 
 [01 数据科学项目方法概述](./data_science_project_notes/01_data_science_project.md)<br/>
 [02 电力窃取用户识别](./data_science_project_notes/02_electric_power_stealing_user_identification.md)
-
 
 
 ### 5. 深度学习模型训练<br/>

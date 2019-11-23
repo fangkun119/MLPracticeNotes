@@ -10,7 +10,7 @@
 [06 决策树](machine_learning_notes/06_decision_tree.md)<br/>
 [07 集成学习：Bagging以及随机森林](machine_learning_notes/07_ensembled_learning_bagging_random_forest.md)<br/>
 [08 集成学习：Boosting](machine_learning_notes/08_ensembled_learning_boosting.md)<br/>
-09 时间序列: [\[原理及常用算法\]](https://www.kaggle.com/fangkun119/learn-time-series-analysis-in-python) [\[Facebook Prophet\]](https://www.kaggle.com/fangkun119/topic-9-part-2-time-series-with-facebook-prophet)
+09 时间序列: [\[常用算法\]](https://www.kaggle.com/fangkun119/learn-time-series-analysis-in-python) [\[Facebook Prophet\]](https://www.kaggle.com/fangkun119/topic-9-part-2-time-series-with-facebook-prophet)
 
 ### 2. 机器学习原理<br/>
 

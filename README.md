@@ -28,7 +28,8 @@ EM：[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/EM.
 ### 4. Data Science项目<br/>
 
 [01 数据科学项目方法概述](./data_science_project_notes/01_data_science_project.md)<br/>
-[02 电力窃取用户识别](./data_science_project_notes/02_electric_power_stealing_user_identification.md)
+[02 电力窃取用户识别](./data_science_project_notes/02_electric_power_stealing_user_identification.md)<br/>
+[03 航空客户价值分析](./data_science_project_notes/03_airline_customer_value_analysis.md)<br/>
 
 
 ### 5. 深度学习模型训练<br/>

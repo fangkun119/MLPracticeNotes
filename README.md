@@ -5,7 +5,7 @@
 [01 机器学习介绍](machine_learning_notes/01_introduction.md)<br/>
 [02 机器学习项目](machine_learning_notes/02_machine_learning_project.md)<br/>
 [03 分类](machine_learning_notes/03_classification.md)<br/>
-[04 回归以及模型训练技巧](machine_learning_notes/04_model_training_and_linear_regression.md)<br/>
+[04 线性回归、Logistics回归、SoftMax以及模型训练技巧](machine_learning_notes/04_model_training_and_linear_regression.md)<br/>
 [05 SVM](machine_learning_notes/05_svm.md)<br/>
 [06 决策树](machine_learning_notes/06_decision_tree.md)<br/>
 [07 集成学习：Bagging以及随机森林](machine_learning_notes/07_ensembled_learning_bagging_random_forest.md)<br/>

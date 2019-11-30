@@ -1,8 +1,36 @@
 # 自编码机(Auto Encoders)
 
 
+## 1.用途
+**编码**：无监督的情况下，学习有效表示输入数据（编码）的ANN<br/>
+**降维**：编码的维度通常比输入数据维度低很多，因此也可以用来降维<br/>
+**无监督预训练**：作为强大的特征检测器，可用于DNN的无监督训练<br/>
+**生成模型**：生产与训练数据非常相似的数据（生成模型）、如使用面部图片训练自动编码器生成新的面部图片<br/>
+**降噪**<br/>
 
-##5.栈式(Stacked)式自动编码器：权重绑定
+## 2.原理
+
+![16_auto_encoder_01_intro_1.jpg](../pic/16_auto_encoder_01_intro_1.jpg)
+
+输入和输出时相同的样本X值，因此可以进行无监督训练，成本函数为重建Loss。同时因为“内部表示”的维度比样本维度低，会迫使模型进行训练，只保留最有代表性的数据到编码中
+
+## 3.用不完整的线性自动编码机实现PCA
+
+构建3层ANN网络，1层Input，1层Output （Input，Output的形状相同），中间1层Coding层<br/>
+不使用激活函数，直接用logits的均方差作为损失函数<br/>
+
+[代码AutoEncoders.01: 降维](16_auto_encoder_code/16_code_01_autoencoder_for_dimension_reduction.md)
+
+## 4.栈式Stacked)自动编码器：一次训训练完所有的层
+
+![16_auto_encoder_02_stacked_ae.jpg](../pic/16_auto_encoder_02_stacked_ae.jpg)
+
+**好处**：多个隐藏层可以学习到更复杂的编码
+**注意事项**：不要让自动编码器变的太强大、导致泛化能力太弱
+
+[代码AutoEncoders.02: 栈式(Stacked)自动编码器1-所有层一起训练](16_auto_encoder_code/16_code_02_stacked_autoencoder_1_all_layer_trained_together.md)
+
+## 5.栈式(Stacked)式自动编码器：权重绑定
 
 因为编码层和解码层是对称的，没有必要分开训练，可以将编码层的权重与解码层的权重联系起来
 
@@ -156,32 +184,3 @@ loss = reconstruction_loss + latent_loss
 对抗自动编码器：[https://goo.gl/enC5fB](https://goo.gl/enC5fB)
 > 一个网络被训练来重现输入，同时另一个网络被训练来找到不能正确重建第一个网络的输入。这促使第一个自动编码器学习鲁棒编码。
 
-## 1.用途
-**编码**：无监督的情况下，学习有效表示输入数据（编码）的ANN<br/>
-**降维**：编码的维度通常比输入数据维度低很多，因此也可以用来降维<br/>
-**无监督预训练**：作为强大的特征检测器，可用于DNN的无监督训练<br/>
-**生成模型**：生产与训练数据非常相似的数据（生成模型）、如使用面部图片训练自动编码器生成新的面部图片<br/>
-**降噪**<br/>
-
-## 2.原理
-
-![16_auto_encoder_01_intro_1.jpg](../pic/16_auto_encoder_01_intro_1.jpg)
-
-输入和输出时相同的样本X值，因此可以进行无监督训练，成本函数为重建Loss。同时因为“内部表示”的维度比样本维度低，会迫使模型进行训练，只保留最有代表性的数据到编码中
-
-## 3.用不完整的线性自动编码机实现PCA
-
-构建3层ANN网络，1层Input，1层Output （Input，Output的形状相同），中间1层Coding层<br/>
-不使用激活函数，直接用logits的均方差作为损失函数<br/>
-
-[代码AutoEncoders.01: 降维](16_auto_encoder_code/16_code_01_autoencoder_for_dimension_reduction.md)
-
-
-##4.栈式Stacked)自动编码器：一次训训练完所有的层
-
-![16_auto_encoder_02_stacked_ae.jpg](../pic/16_auto_encoder_02_stacked_ae.jpg)
-
-**好处**：多个隐藏层可以学习到更复杂的编码
-**注意事项**：不要让自动编码器变的太强大、导致泛化能力太弱
-
-[代码AutoEncoders.02: 栈式(Stacked)自动编码器1-所有层一起训练](16_auto_encoder_code/16_code_02_stacked_autoencoder_1_all_layer_trained_together.md)

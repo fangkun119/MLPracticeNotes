@@ -18,7 +18,7 @@
 
 ![15_rnn_01_single_recurrent_neura.jpg](../pic/15_rnn_01_single_recurrent_neura.jpg)<br/>
 
-￼RNN神经元与DNN、CNN中等前馈神经网络神经元的差别是，多了一条从输出到输入的反向连接<br/>
+RNN神经元与DNN、CNN中等前馈神经网络神经元的差别是，多了一条从输出到输入的反向连接<br/>
 每个时刻，神经元有两个输入：输入(1)当前时刻的输入特征X<sub>t</sub>；输入(2)前一个时刻的输出Y<sub>t-1</sub>
 
 ### (2) 一层循环神经元

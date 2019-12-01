@@ -54,7 +54,7 @@
 查API确认使用的是哪种初始化方法，例如`TensorFlow`的`dense()`方法，默认使用`glorot_uniform_initializer`来初始化
 
 
-> **`dense`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/layers/dense?hl=en) <br/> `kernel_initializer`: Initializer function for the weight matrix. If None (default), weights are initialized using the default initializer used by tf.get_variable.<br/> **`get_variable`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/get_variable?hl=en)<br/> **`glorot_uniform_initializer`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/glorot_uniform_initializer?hl=en)<br/>
+> **`dense`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/layers/dense?hl=en) <br/> > **`kernel_initializer`**: Initializer function for the weight matrix. If None (default), weights are initialized using the default initializer used by tf.get_variable.<br/> > **`get_variable`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/get_variable?hl=en)<br/> > **`glorot_uniform_initializer`**: [api_doc](https://www.tensorflow.org/api_docs/python/tf/glorot_uniform_initializer?hl=en)<br/>
 
 **(3) 定制初始化策略：**
 

@@ -11,7 +11,7 @@
 
 梯度可能变得越来越大，许多层得到了非常大的权重更新，算法发散。这是梯度爆炸的问题，在[循环神经网络](https://www.jianshu.com/p/9b7df8250000)中最为常见。 更一般地说，深度神经网络受梯度不稳定之苦; 不同的层次可能以非常不同的学习速率。
 
-##3.logistic激活函数梯度消失问题分析
+## 3.logistic激活函数梯度消失问题分析
 
 > 论文：“Understanding the Difficulty of Training Deep Feedforward Neural Networks” by Xavier Glorot and Yoshua Bengio
 
@@ -26,7 +26,9 @@
 * 网络正向，每层的方差持续增加，直到激活函数在顶层饱和（logistic输出均值不为0导致、tanh会好一些）
 
 **原因分析：**
+
 ![12_dnn_training_01_logistic_saturating.jpg](../pic/12_dnn_training_01_logistic_saturating.jpg)<br/>
+
 当输入变大（负或正）时，函数饱和在 0 或 1，导数非常接近 0。因此，当反向传播开始时， 它几乎没有梯度通过网络传播回来，而且由于反向传播通过顶层向下传递，所以存在的小梯度不断地被稀释，因此较低层确实没有任何东西可用
 
 **解决方法：**
@@ -35,7 +37,7 @@
 
 ![12_dnn_training_02_logistic_Xavier_init.jpg](../pic/12_dnn_training_02_logistic_Xavier_init.jpg)
 
-当`n_inputs = n_outpus`时，上面公式可以进一步简化为σ=1*(n<sub>inputs</sub>)<sup>1/2</sup>或r=3<sup>1/2</sup> * n<sub>inputs</sub><sup>1/2</sup>
+当`n_inputs = n_outpus`时，上面公式可以进一步简化为σ=1*(n<sub>inputs</sub>)<sup>1/2</sup>或r=3<sup>1/2</sup> * n<sub>inputs</sub><sup>1/2</sup><br/>
 
 ## 4.通过Xavier模型权重初始化来缓解梯度消失、梯度爆炸的问题
 
@@ -83,7 +85,7 @@ S型激活函数在生物神经元中可见，但在DNN中却表现不如ReLU (S
 def logit(z):
     return 1 / (1 + np.exp(-z))
 ~~~
-￼
+
 **(2) ReLU激活函数**<br/>
 
 表现比S型函数好，因为它不稀释正值；但会出现dying ReLU问题（神经元死了，只输出0）特别是使用较大的训练速度时
@@ -161,7 +163,7 @@ def selu(z, scale=alpha_0_1, alpha=scale_0_1):
 # for version later than tensorflow 1.4
 tf.nn.selu()
 ~~~
-￼
+
 代码：使用SELU函数，以及LuCun initialization
 
 ~~~python
@@ -181,8 +183,8 @@ for layer in range(1000):
 
 ## 5.DNN使用哪种激活函数
 
-**通常选用:**  ELU(加速线性单元) > Leaky ReLU(及其变种) > ReLU > TanH > Logistic函数 <br/>
-**如果更加关注性能：**选用LeakyReLU<br/>
+**通常情况下优先级由高到低依次是**：ELU（加速线性单元），Leaky ReLU（及其变种），ReLU，TanH，Logistic函数<br/>
+**如果更加关注性能**，选用LeakyReLU<br/>
 如果有多余的时间和算例，可以使用交叉验证缺评估别的激活函数：<br/>
 
 * 如果网络有过拟合：可以考虑使用RReLU(带随机泄漏的ReLU)
@@ -224,7 +226,6 @@ He初始化+ELU或ReLU变种，虽然能在训练的初期明显缓解梯度消�
 **API**：<br/>
 
 `tf.layers.batch_normalization(momentum, training, scale=True)` <br/>
-
 > **momentum**: 衰减参数，用指数衰减（移动平均）来计算运行均值时的参数，表示多大程度上让均值接近旧值，设置接近1的值(如0.99, 0.999, 0.9999,…)，对越大的数据集合越小的批量，需要的9越多<br/> 
 > **training**：相当于batch\_norm的is\_training，训练时使用batch的样本计算中心和标准差，测试时用全量样本计算<br/>
 > **scale**: 是否缩放(ReLU或者没有激活函数时可以不缩放，其他激活函数需要缩放)，默认为True(与batch\_norm不同)
@@ -364,23 +365,24 @@ Caffee->Tensorflow转换器：[https://github.com/ethereon/caffee-tensorflow](ht
 ~~~python
 optimizer = tf.train.MomentumOptimizer(learning_rate=learning_rate, momentum=0.9)
 ~~~
-￼
+
 **原理**：梯度当做加速度而不是速度来来使用，从而加快学习速度
+
 > 超参数momentum=0.9是公式中的β，用来实现摩擦机制防止梯度增长过快，0为高摩擦，1为无摩擦，默认0.9
 
-**机制理解：**
+**机制理解**：
 
 * 可以验证（梯度为常量时）最终速度（权重变化的最大值）等于梯度乘以学习速率`n*1/(1-β)`，如果β为9，那么最终速度就是`10倍梯度*学习速率`
 * 通常梯度开始阶段陡峭下降快，到谷底时平滑下降慢，如果使用动量优化，在谷底时也可以快速下降
 
-**缺点：**下降过快、可能会超调
+**缺点**：下降过快、可能会超调
 
 **(2) NAG(Nesterov Accelerated Gradient)<br/>**
 
 ~~~python
 optimizer = tf.train.MomentumOptimizer(learning_rate=learning_rate,momentum=0.9, use_nesterov=True) 
 ~~~
-￼
+
 **原理**：与动量优化类似，但区别是不是在当前位置(θ)，而是在更加靠前一点的位置(θ+βm)来测量梯度
 机制理解：
 
@@ -400,11 +402,9 @@ optimizer = tf.train.AdagradOptimizer(learning_rate=learning_rate)
 ~~~
 
 **不推荐使用，有过早停止的问题<br/>**
-￼
+
 **原理**：前面的算法先沿着最陡峭的方向走到谷底，然后沿着山谷慢慢走（有点局部贪婪算法的感觉），AdaGrad可以沿着全局最优的方向偏移<br/>
 ![12_dnn_training_06_adagrad_2.jpg](../pic/12_dnn_training_06_adagrad_2.jpg)
-
-
 
 **步骤：**
 
@@ -413,21 +413,21 @@ optimizer = tf.train.AdagradOptimizer(learning_rate=learning_rate)
 > ![12_dnn_training_05_adagrad_1](../pic/12_dnn_training_05_adagrad_1.jpg)
 
 
-**优点：**适应性学习，下降曲线平缓，更加指向全局最优而不是当前梯度方向；只需要少量调整学习步长超参数<br/>
+**优点**：适应性学习，下降曲线平缓，更加指向全局最优而不是当前梯度方向；只需要少量调整学习步长超参数<br/>
 
-**缺点：**训练DNN时，在达到全局最优之前就会停止（训练类似线性回归的简单任务可能有效）；不推荐使用<br/>
+**缺点**：训练DNN时，在达到全局最优之前就会停止（训练类似线性回归的简单任务可能有效）；不推荐使用<br/>
 
 **(4) RMSProp**<br/>
 
 ~~~python
 optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate, momentum=0.9, decay=0.9, epsilon=1e-10)
 ~~~
-￼
+
 **原理：** 解决AdaGrad降速太快没法收敛到全局最优的问题，为梯度平方增加一个权重(1-beta)，使变量s仅累加最近迭代中的梯度（而非从训练开始的所有梯度）
 
 ![12_dnn_training_07_rmsprop.jpg](../pic/12_dnn_training_07_rmsprop.jpg)
 
-**超参数：**beta通常设为0.9
+**超参数**：beta通常设为0.9
 
 **(5) Adam优化**
 
@@ -435,12 +435,13 @@ optimizer = tf.train.RMSPropOptimizer(learning_rate=learning_rate, momentum=0.9,
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 ~~~
 
-**原理：**自适应力矩估计，集合了Momentum优化和RMSProp的想法
+**原理**：自适应力矩估计，集合了Momentum优化和RMSProp的想法
 
 * 类似Momentum优化，会跟踪过去梯度的指数衰减均值（上面的公式1：梯度当作加速度、而不是速度、但不是简单使用摩擦系数控制，而是指数衰减，理解为从最近一段时间累加）
 * 类似RMSProp，也会跟踪过去梯度平方的指数衰减平均值（上面的公式2：沿着更偏向于全局最优的方向走、而不是当前梯度、(1-beta2)是RMSProp中的权重）
 
-**公式：**<br/>
+**公式**：<br/>
+
 ![12_dnn_training_08_adam.jpg](../pic/12_dnn_training_08_adam.jpg)<br/>
 
 > 公式1（来自Momentum优化的公式1）：从最近一段时间的梯度中累加梯度、梯度作为加速度<br/>
@@ -463,9 +464,10 @@ optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 **方法3:** 应用对偶平均（FTRL, Follow The Regularized Leader)，TensorFlow在FTRLOptimizer类中实现了一个名为FTRL-Proximal的FTRL变体<br/>
 
 ## 14.自定义学习速率调度
-**原因：**太高训练分歧；太低收敛太慢；计算资源有限时希望提前停止只用一个次优解；自适应速率优化算法（如A大G绕道、RMSProp、Adam）也需要时间来稳定<br/>
 
-**方法：**采用特定的学习计划，以下是一些备选<br/>
+**原因**：太高训练分歧；太低收敛太慢；计算资源有限时希望提前停止只用一个次优解；自适应速率优化算法（如A大G绕道、RMSProp、Adam）也需要时间来稳定<br/>
+
+**方法**：采用特定的学习计划，以下是一些备选<br/>
 
 1. 预定分段常数学习计划：例如开始阶段学习率是0.1，50个mini-batch之后是0.01
 2. 性能调度：每N步检查一下验证误差，当当前验证误差停止出现时，学习率降低到1/c
@@ -481,11 +483,11 @@ optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 
 ## 15.避免过拟合
 
-###方法1: 提前停止
+### 方法1: 提前停止
 
 **方法**：CH04中提到过一个方法、在验证集性能开始下降时停止训练，在TF中可以定期对验证集进行模型评估（例如每50步），如果表现好于前一个优胜者，就将优胜者快照保存起来，同时计算当前步数，当步数达到预设的上限时停止训练，恢复最后一张优胜者的快照
 
-###方法2: L1，L2正则化
+### 方法2: L1，L2正则化
 
 **代码1**：手动正则化（适用于层数少的时候）：将正则项加入到成本函数中
 
@@ -523,18 +525,18 @@ with tf.name_scope("loss"):
 
 完整代码：[代码DNN.13: 用Karas高层API实现L1正则化](12_dnn_code/12_code_13_L1_L2_reg_with_keras_api.md)
 
-###方法3: Dropout
+### 方法3: Dropout
 
-**方法：**<br/>
+**方法**：<br/>
 每一个训练步骤(每个输入样本)，输入层和隐藏层的每个神经元都会以p的概率会被丢弃，有1-p的概率会被激活
 
-**原理：**<br/>
+**原理**：<br/>
 有很高的成功率，原因在于<br/>
 1. 让神经元不能过分依赖某些输入、对输入的轻微变化不那么敏感<br/>
 2. 激活神经元的组合共有2^N种，重复率非常低，用M个样本训练，几乎相当于训练了2^N颗不同但有共享很多权重神经网络<br/>
 3. Dropout会导致模型收敛变慢，但如果微调合适通常都能得到一个更好的模型<br/>
 
-**要点：**<br/>
+**要点**：<br/>
 
 1. 假设p=0.5，因为dropout只发生在训练期间而不是测试期间，测试期间神经元能接触到的输入连接时训练期间的2倍，因此输入权重要除以2, 因此，当丢弃率时p时，在训练结束时要给每个输入连接权重乘以(1-p) 
 2. 模型过度拟合时可以增高dropout率，模拟欠拟合时可以减少dropout率，针对大层可以提高drop率，针对小层可以减少drop率 <br/>
@@ -556,7 +558,7 @@ with tf.name_scope("dnn"):
 
 ### 方法4: 最大范数正则化
 
-**方法：**<br/>
+**方法**：<br/>
 
 约束：每个神经元包含一个传入连接权重`w`满足||w||<sub>2</sub><=r（即w的L2范数小于最大范数超参数r)<br/> 
 为了满足这个约束，每次训练步骤之后计算||w||<sub>2</sub>，不满足约束时进行剪裁w <- w * (r/||w||<sub>2</sub>)

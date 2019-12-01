@@ -53,7 +53,7 @@
 
 查API确认使用的是哪种初始化方法，例如`TensorFlow`的`dense()`方法，默认使用`glorot_uniform_initializer`来初始化
 
-> `dense`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/layers/dense?hl=en) <br/> > `kernel_initializer`: Initializer function for the weight matrix. If None (default), weights are initialized using the default initializer used by tf.get_variable.<br/> > `get_variable`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/get_variable?hl=en)<br/> > `glorot_uniform_initializer`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/glorot_uniform_initializer?hl=en)<br/>
+> `dense`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/layers/dense?hl=en)<br/> `kernel_initializer`: Initializer function for the weight matrix. If None (default), weights are initialized using the default initializer used by tf.get_variable.<br/> `get_variable`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/get_variable?hl=en)<br/> `glorot_uniform_initializer`: [api_doc](https://www.tensorflow.org/api_docs/python/tf/glorot_uniform_initializer?hl=en)
 
 **(3) 定制初始化策略：**
 
@@ -215,7 +215,7 @@ He初始化+ELU或ReLU变种，虽然能在训练的初期明显缓解梯度消�
 	> μ<sub>B</sub> = (1/m<sub>B</sub>)∑X<sup>i</sup><br/>
 	> σ<sub>B</sub><sup>2</sup> = (1/m<sub>B</sub>)∑(X<sup>i</sup> - μ<sub>B</sub>)<sup>2</sup>
 
-2. 样本数据X<sup>i</sup>在传给激活函数之前：先进行零中心和归一化处理；以及尺寸变换和便宜操作。其中的ε是一个为了避免除零的极小值（通常为10<sup>-3</sup>，被称为平滑项，具体名称是拉布拉斯平滑，Laplace Smoothing），γ是层的缩放参数，β是层的偏移参数（偏移量），Z<sup>i</sup>是BN（Batch Normalizor）的最终输出、该输出会交给激活函数
+2. 样本数据X<sup>i</sup>在传给激活函数之前：先进行零中心和归一化处理；以及尺寸变换和偏移操作。其中的ε是一个为了避免除零的极小值（通常为10<sup>-3</sup>，被称为平滑项，具体名称是拉布拉斯平滑，Laplace Smoothing），γ是层的缩放参数，β是层的偏移参数（偏移量），Z<sup>i</sup>是BN（Batch Normalizor）的最终输出、该输出会交给激活函数
 
 	> X<sup>i</sup> = (X<sup>i</sup> - μ<sub>B</sub>) / (σ<sub>B</sub><sup>2</sup> + ε)<sup>1/2</sup> 
 	> Z<sup>i</sup> = γ.X<sup>i</sup> + β

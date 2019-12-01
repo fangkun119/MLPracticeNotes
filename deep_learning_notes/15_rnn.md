@@ -31,8 +31,8 @@ RNN神经元与DNN、CNN中等前馈神经网络神经元的差别是，多了�
 
 ![15_rnn_03_recurrent_neura_layer_2.jpg](../pic/15_rnn_03_recurrent_neura_layer_2.jpg)<br/>
 
-两种输入、两类权重，外加一个偏置，线性方程求值结果喂给一个激活函数
-X_t, Y_t, Y_t-1都是行向量，转之后变成列向量
+两种输入、两类权重，外加一个偏置，线性方程求值结果喂给一个激活函数<br/>
+X<sub>t</sub>, Y<sub>t</sub>, Y<sub>t-1</sub>都是行向量，转之后变成列向量
 b是列向量，包含了改层每一个神经元的偏差系数
 
 ### (4) 单层循环神经元的输出_2：针对一个mini-batch批次样本的输出
@@ -108,8 +108,8 @@ X<sub>t</sub>, Y<sub>t-1</sub>, Y<sub>t</sub>都是矩阵，行对应一个样�
 
 识别MNST图像 (其实CNN比RNN更适合做图像分类，这里用MNST图像分类来作为例子，只是因为和前面章节的比较相似)<br/>
 
-![15_rnn_10_mnist.jpg](../pic/15_rnn_10_mnist.jpg)
-￼
+![15_rnn_10_mnist.jpg](../pic/15_rnn_10_mnist.jpg)<br/>
+
 [代码RNN.05 RNN例子：MNIST图像分类（单层RNN）](15_rnn_code/15_code_05_mnist_classification_with_single_layer_rnn.md)<br/>
 [代码RNN.06 RNN例子：MNIST图像分类（多层RNN）](15_rnn_code/15_code_06_mnist_classification_with_multiple_layer_rnn.md)
 

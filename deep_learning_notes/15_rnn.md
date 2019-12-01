@@ -17,24 +17,28 @@
 ### (1) 单个循环神经元
 
 ![15_rnn_01_single_recurrent_neura.jpg](../pic/15_rnn_01_single_recurrent_neura.jpg)<br/>
+
 ￼RNN神经元与DNN、CNN中等前馈神经网络神经元的差别是，多了一条从输出到输入的反向连接<br/>
 每个时刻，神经元有两个输入：输入(1)当前时刻的输入特征X<sub>t</sub>；输入(2)前一个时刻的输出Y<sub>t-1</sub>
 
 ### (2) 一层循环神经元
-￼
+
 ![15_rnn_02_recurrent_neura_layer.jpg](../pic/15_rnn_02_recurrent_neura_layer.jpg)<br/>
+
 与单个循环神经元类似，但是是一层神经元，可以接收更多的输入
 
 ### (3) 单层循环神经元的输出_1：针对一个样本的输出
-￼
+
 ![15_rnn_03_recurrent_neura_layer_2.jpg](../pic/15_rnn_03_recurrent_neura_layer_2.jpg)<br/>
+
 两种输入、两类权重，外加一个偏置，线性方程求值结果喂给一个激活函数
 X_t, Y_t, Y_t-1都是行向量，转之后变成列向量
 b是列向量，包含了改层每一个神经元的偏差系数
 
 ### (4) 单层循环神经元的输出_2：针对一个mini-batch批次样本的输出
-￼
+
 ![15_rnn_04_recurrent_neura_layer_3.jpg](../pic/15_rnn_04_recurrent_neura_layer_3.jpg)<br/>
+
 X<sub>t</sub>, Y<sub>t-1</sub>, Y<sub>t</sub>都是矩阵，行对应一个样本，这些样本共用了相同的权重矩阵W<sub>x</sub>, W<sub>y</sub>
 
 ### (5) 例子

@@ -12,7 +12,7 @@
 左侧的卷积核使用了两个过滤器；<br/>
 输入图片（右侧第1张）被这两个过滤器处理后，分别得到两个特征图（右侧第2、3张）<br/>
 
-代码：[代码CNN.01 卷积原理演示1 - 过滤器](14_cnn_code/14_code_01_convolution_demo_1_filter.md)<br./>
+代码：[代码CNN.01 卷积原理演示1 - 过滤器](14_cnn_code/14_code_01_convolution_demo_1_filter.md)<br/>
 
 过滤器有三个超参数:<br/>
 ![14_cnn_02_filter_params.jpg](../pic/14_cnn_02_filter_params.jpg)
@@ -22,7 +22,6 @@
 * Padding方式：
     * Zero-Padding（步幅为1时，Zero-Padding可以让上一层与下一层有相同的高*宽）
     * VALID-Padding (不会补0，会忽略无法覆盖的部分）
-￼
 
 ## 3.卷积层的结构
 
@@ -39,43 +38,48 @@
 [代码CNN.03 卷积原理演示3 - 使用TF Lib提供的卷积核](14_cnn_code/14_code_03_convolution_demo_3_conv_core_with_tf_lib.md)<br/>
 [代码CNN.04 卷积原理演示4 - VALID和SAME填充](14_cnn_code/14_code_04_convolution_demo_4_valid_and_same_padding.md)<br/>
 
-## 4.一个卷机层的一个神经元（特征图k第i行j列位置上神经元）的输入和输出
-￼
+## 4.一个卷积层的一个神经元（特征图k第i行j列位置上神经元）的输入和输出
+
 ![14_cnn_04_conv_neuron.jpg](../pic/14_cnn_04_conv_neuron.jpg)
 
 输入：上一个输入层接受野范围内(长*宽) * 通道数量（深度）神经元的输出 * 权重 + 特征图k的偏置
 
 ## 5.卷积层的问题
 
-**问题：**内存需求大
+**问题**：内存需求大
 
 * 预测过程中：因为只有前向传播，只需要缓存两个卷积层的神经元数据
 * 训练过程中：因为还有后向传播，需要缓存所有卷基层的神经元数据
 
-**解决办法：<br/>**
-(1) 减小批次尺寸 (2) 减少步幅 (3) 减少特征图图层数 (4) 用16位替代32位符点精度 (5) 分发CNN到多台机器上
+**解决办法**：
+
+* 减小批次尺寸
+* 减少步幅
+* 减少特征图图层数
+* 用16位替代32位符点精度
+* 分发CNN到多台机器上
 
 ## 6.池化（Pooling）
 
-**用途：**通过对输入图像进行二次采样来减小计算负载、内存利用率、参数数量（从而降低过拟合风险），同时也可以使神经网络容忍一定的图像位移（位置不变性）<br/>
+**用途**：通过对输入图像进行二次采样来减小计算负载、内存利用率、参数数量（从而降低过拟合风险），同时也可以使神经网络容忍一定的图像位移（位置不变性）<br/>
 
-**超参数（没有权重）：**接受野高*宽，步幅，填充类型（VALID，SAME），聚合函数（max，mean）<br/>
+**超参数**（没有权重）：接受野高*宽，步幅，填充类型（VALID，SAME），聚合函数（max，mean）<br/>
 ￼
 ![14_cnn_05_pooling.jpg](../pic/14_cnn_05_pooling.jpg)
 
-**池化层结构：**如上图
+**池化层结构**：如上图
 
 * 通常在各通道独立工作、输出深度与输入深度相同
-
 * 也可也选择在深度为度进行叠加，这种情况下，空间为度（高和宽）不受叠加影响，但是通道数量减少了
 
-**代码：**[代码CNN.05 池化层](14_cnn_code/14_code_05_pooling.md)
+[代码CNN.05 池化层](14_cnn_code/14_code_05_pooling.md)
 
 
 ## 7.CNN图片分类
-**API：**tf.layers.dense(), conv2d() and dropout()   
 
-> 不再使用tensorflow.contrib.layers.fully_connected(), conv2d() and dropout()
+**API**：`tf.layers.dense()`, `conv2d()` and `dropout()`
+
+> 不再使用`tensorflow.contrib.layers.fully_connected()`, `conv2d()` and `dropout()`
 > contrib的代码都是临时package
 
 For all these functions:

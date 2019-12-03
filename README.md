@@ -33,6 +33,8 @@ EM | | | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes
 [02 电力窃取用户识别](./data_science_project_notes/02_electric_power_stealing_user_identification.md)<br/>
 [03 航空客户价值分析](./data_science_project_notes/03_airline_customer_value_analysis.md)<br/>
 [04 中医证型关联规则挖掘](./data_science_project_notes/04_TCM_syndromes_association_rule_mining.md)<br/>
+05 基于水色图像的水质评价 (to do)<br/>
+[06 家用电器用户行为分析与事件识别](./data_science_project_notes/06_household_appliances_user_behavior_analysis.md)
 
 ### 5. 深度学习模型训练<br/>
 [01.Tensor Flow](deep_learning_notes/10_hands_on_tensorflow.md)<br/>

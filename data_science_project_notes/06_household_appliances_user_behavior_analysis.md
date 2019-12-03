@@ -143,23 +143,62 @@ water_heater.xls
 ##### 用水波动指标
 ![10_waterheater_10_water_amount_var_related_features.jpg](img/10_waterheater_10_water_amount_var_related_features.jpg)
 
+图示上述指标计算依据：
+
+![10_waterheater_11_feature_calculation_approach.jpg](img/10_waterheater_11_feature_calculation_approach.jpg)
+
+
+
 #### 步骤4：
 
-用3个比较宽松的条件筛选掉那些非常短暂的用水事件，只要一次完整的用水事件满足任意一个条件，就被判定为短暂用水事件，即会被筛选掉。3个筛选条件如下：
+用以下3个条件筛选掉哪些非常短暂、显然不是洗浴的用水事件（满足下列任意一个条件即被过滤）
 
 1. 一次用水事件中总用水量（纯热水）小于y升。
 2. 用水时长小于100秒。
 3. 总用水时长小于120秒。
 
-接下来计算y的合理取值：
+接下来计算y的取值：
 
+1. 洗澡的水温（热水冷水混合后）一般为37~41℃，因此热水器设定的温度越高（混合的冷水越多、热水占比越少）、纯热水使用量就越少
 
+	> 取洗浴温度的均值为39℃来计算热水器不同设定温度下的热水使用量阈值
+
+2. 经过实验分析，热水器设定温度为50℃时，一次普通的洗浴时长为15分钟，总用水时长10分钟左右，热水的使用量为10~15升
+
+	> 为了不影响特殊的短暂的洗浴事件，以及考虑到夏天用的热水较少，放宽范围假定热水器在设定温度为50℃时，一次洗浴的总热水使用量为5升
+
+3. 依据上述思路，假设两次洗浴事件热水和冷水混合后的花洒出水水温度恒为T摄氏度，列出如下热守恒公式
+	![10_waterheater_12_heat_function.jpg](img/10_waterheater_12_heat_function.jpg)
+	
+	![10_waterheater_13_heat_function_2.jpg](img/10_waterheater_13_heat_function_2.jpg)
+	
+	>（1）式是50℃的热水V升与M升C℃自来水混合得到M+V升T摄氏度的洗浴用水的热守恒公式。<br/>
+	>（2）式是X℃的热水Y升与M+VY升C℃自来水混合得到M+V升T℃的洗浴用水的热守恒公式。 
+
+4. 解上述公式可以计算出标准热水使用量
+
+	![10_waterheater_14_hot_water_amount.jpg](img/10_waterheater_14_hot_water_amount.jpg)
 
 ## 数据清洗
 
+![10_waterheater_15_data_cleaning.jpg](img/10_waterheater_15_data_cleaning.jpg)
+
+关热水事件会丢失、或因为网络问题很久之后才被记录，导致的结果是，错误得到一个持续时间超长的用水记录（如上图中的数据5、7）。解决办法是添加一条关热水事件（上图中的数据6）
+
+![10_waterheater_16_training_set.jpg](img/10_waterheater_16_training_set.jpg)
+
+最终用于训练模型的数据如上
+
 ## 模型构建
 
+使用神经网络来进行二分类，识别是否是洗浴事件（输出范围是[-1,1])。调参后发现2个隐藏层（节点数分别是17、10）的时候效果比较好
+
+[代码：神经网络](code/10-3_neural_network.py)
+
 ## 模型检验
+
+用测试集检验模型，准确率为85.5%
+
 
 
 

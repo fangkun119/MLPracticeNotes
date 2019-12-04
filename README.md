@@ -36,7 +36,7 @@ EM | | | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes
 05 基于水色图像的水质评价<br/>
 [06 家用热水器用户行为识别](./data_science_project_notes/06_household_appliances_user_behavior_analysis.md)<br/>
 [07 系统磁盘可用容量预测](./data_science_project_notes/07_disk_free_space_prediction.md)<br/>
-08 电子商务网站用户行为分析及服务推荐<br/>
+[08 电子商务网站用户行为分析及服务推荐](./data_science_project_notes/08_e_com_recommendation.md)<br/>
 09 财政收入影响因素分析及预测模型<br/>
 10 基于基站定位数据的商圈分析<br/>
 11 电商产品评论数据情感分析<br/>

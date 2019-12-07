@@ -19,10 +19,10 @@
 线性代数 |  |  | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Algebra.pdf) | 
 数学分析及概率论 | [\[摘要(熵)\]](theory_note/Appendix_01_entropy.md)| [\[概率论\]](theory_note/Appendix_10_probability_theory.md) | [\[PDF: 数学分析及概率论1\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Mathematics_Analysis_and_Probability_Theory_1.pdf) <br/>[\[PDF: 概率论2\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Probability_Theory_2.pdf)| 
 线性回归、Logistic回归、SoftMax | [\[摘要: 分类模型\]](theory_note/Appendix_02_classification_algorithms.md)<br/>[\[摘要: 线性回归\]](theory_note/Appendix_03_linear_regression.md)| [\[线性回归\]](theory_note/Appendix_08_linear_regression.md) [\[Logistic回归与SoftMax\]](theory_note/Appendix_09_logistic_regression.md)|  [\[PDF 1\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Regression_Logistic_Regression_and_SoftMax_1.pdf)<br/>[\[PDF 2\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Linear_Regression_Logistic_Regression_and_SoftMax_2.pdf) | 
-决策树和随机森林 | | |[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Tree_and_Forest.pdf)| 
+决策树和随机森林 | | [\[决策树和随机森林\]](theory_note/Appendix_11_decision_tree_and_random_forest.md) |[\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Tree_and_Forest.pdf)| 
 Boosting ||[\[XGBoost\]](theory_note/Appendix_05_xgboost.md) [\[AdaBoost\]](theory_note/Appendix_06_adaboost.md)| [\[PDF: Adaboost, GBDT\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Boosting_AdaBoosting_GBDT.pdf) |
 SVM | | [\[SVM\]](theory_note/Appendix_04_svm.md) | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/SVM.pdf) | 
-聚类 | | [\[网页\]](theory_note/Appendix_07_clustering.md) | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Clustering_Algorithms.pdf) | 
+聚类 | | [\[聚类\]](theory_note/Appendix_07_clustering.md) | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Clustering_Algorithms.pdf) | 
 EM | | | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/EM.pdf) | 
 主题模型 | | | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes/Topic_Model.pdf) | 
 

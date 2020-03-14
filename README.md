@@ -50,3 +50,7 @@ EM | | | [\[PDF\]](https://github.com/fangkun119/MLTheoryNotes/blob/master/notes
 [06.RNN](deep_learning_notes/15_rnn.md)<br/>
 [07.自编码机](deep_learning_notes/16_auto_encoder.md)<br/>
 [08.强化学习](deep_learning_notes/17_reinforcement_learning.md)<br/>
+
+### 6. NLP
+
+[https://github.com/fangkun119/nlpia](https://github.com/fangkun119/nlpia)

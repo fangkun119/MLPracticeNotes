@@ -6,7 +6,8 @@
 - [2. 机器学习模型训练](#2-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83)
 - [3. 机器学习原理](#3-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8E%9F%E7%90%86)
 - [4. 深度学习模型训练](#4-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83)
-- [5. 小案例](#5-%E5%B0%8F%E6%A1%88%E4%BE%8B)
+- [5. Kaggle竞赛](#5-kaggle%E7%AB%9E%E8%B5%9B)
+- [6. 小案例](#6-%E5%B0%8F%E6%A1%88%E4%BE%8B)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -143,7 +144,13 @@
 > 7. [自编码机](deep_learning_notes/16_auto_encoder.md) 
 > 8. [强化学习](deep_learning_notes/17_reinforcement_learning.md) 
 
-## 5. 小案例
+## 5. Kaggle竞赛
+
+> 1. [Talkingdata ad-trackinjiahg fraud   detection](https://www.kaggle.com/fangkun119/competition-talkingdata-adtracking-frauddetection), No.2 in [kaggle public score rank](https://www.kaggle.com/c/talkingdata-adtracking-fraud-detection/notebooks?sortBy=scoreDescending&group=everyone&pageSize=20&competitionId=8540)  
+>
+> 2. [Mercedes-benz greener manufacturing](https://www.kaggle.com/fangkun119/competition-mercedes-benz-greener-manufacturing), Top  80 in [kaggle public score rank](https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/notebooks?sortBy=scoreDescending&group=everyone&pageSize=100&competitionId=6565)  
+
+## 6. 小案例
 
 > 1. [数据科学项目方法概述](./data_science_project_notes/01_data_science_project.md)
 > 2. [电力窃取用户识别](./data_science_project_notes/02_electric_power_stealing_user_identification.md)
